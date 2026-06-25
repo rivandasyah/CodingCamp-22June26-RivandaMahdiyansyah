@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expense & Budget Visualizer</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="app-header__content">
+      <div class="app-header__intro">
+        <h1 class="app-header__title">Expense &amp; Budget Visualizer</h1>
+        <p class="app-header__subtitle">Track income, expenses, and spending habits in one place.</p>
+      </div>
+
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+        <span class="theme-toggle__label" aria-hidden="true">
+          <svg class="theme-toggle__icon" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+          </svg>
+        </span>
+      </button>
+    </div>
+  </header>
+
+  <main class="app-main">
+    <section class="summary-section" aria-labelledby="summary-title">
+      <h2 class="section-title" id="summary-title">Summary</h2>
+
+      <div class="summary-cards">
+        <article class="summary-card summary-card--balance">
+          <h3 class="summary-card__title">Current Balance</h3>
+          <p class="summary-card__amount" id="balance-amount">Rp0</p>
+        </article>
+
+        <article class="summary-card summary-card--income">
+          <h3 class="summary-card__title">Total Income</h3>
+          <p class="summary-card__amount" id="income-amount">Rp0</p>
+        </article>
+
+        <article class="summary-card summary-card--expense">
+          <h3 class="summary-card__title">Total Expense</h3>
+          <p class="summary-card__amount" id="expense-amount">Rp0</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="transaction-form-section" aria-labelledby="transaction-form-title">
+      <h2 class="section-title" id="transaction-form-title">Add Transaction</h2>
+
+      <form class="transaction-form" id="transaction-form">
+        <div class="form-field">
+          <label class="form-label" for="transaction-description">Description</label>
+          <input class="form-input" type="text" id="transaction-description" name="description" autocomplete="off" required>
+        </div>
+
+        <div class="form-field">
+          <label class="form-label" for="transaction-amount">Amount</label>
+          <input class="form-input" type="number" id="transaction-amount" name="amount" min="0.01" step="0.01" inputmode="decimal" required>
+        </div>
+
+        <div class="form-field">
+          <label class="form-label" for="transaction-type">Type</label>
+          <select class="form-select" id="transaction-type" name="type" required>
+            <option value="">Select type</option>
+            <option value="income">Income</option>
+            <option value="expense">Expense</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label class="form-label" for="transaction-category">Category</label>
+          <select class="form-select" id="transaction-category" name="category" required>
+            <option value="">Select category</option>
+            <option value="Food">Food</option>
+            <option value="Transport">Transport</option>
+            <option value="Shopping">Shopping</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Bills">Bills</option>
+            <option value="Health">Health</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label class="form-label" for="transaction-date">Date</label>
+          <input class="form-input" type="date" id="transaction-date" name="date" required>
+        </div>
+
+        <button class="button button--primary" type="submit">Add Transaction</button>
+      </form>
+    </section>
+
+    <section class="category-section" aria-labelledby="category-title">
+      <h2 class="section-title" id="category-title">Category Manager</h2>
+
+      <form class="category-form" id="category-form">
+        <div class="form-field">
+          <label class="form-label" for="custom-category">Custom Category</label>
+          <input class="form-input" type="text" id="custom-category" name="category" autocomplete="off" required>
+        </div>
+
+        <button class="button button--secondary" type="submit">Add Category</button>
+      </form>
+    </section>
+
+    <section class="chart-section" aria-labelledby="chart-title">
+      <h2 class="section-title" id="chart-title">Spending Chart</h2>
+
+      <div class="chart-container" id="spending-chart" role="img" aria-label="Expense distribution by category">
+        <p class="chart-empty-state">Add an expense to see your spending chart.</p>
+      </div>
+
+      <ul class="chart-legend" id="chart-legend" aria-label="Spending chart legend"></ul>
+    </section>
+
+    <section class="history-section" aria-labelledby="history-title">
+      <div class="history-section__header">
+        <h2 class="section-title" id="history-title">Transaction History</h2>
+
+        <div class="sort-control">
+          <label class="form-label" for="sort-order">Sort by</label>
+          <select class="form-select" id="sort-order" name="sortOrder">
+            <option value="latest">Latest</option>
+            <option value="amount-asc">Amount Ascending</option>
+            <option value="amount-desc">Amount Descending</option>
+            <option value="category-az">Category A-Z</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="transaction-list" id="transaction-list" aria-live="polite">
+        <p class="transaction-empty-state">No transactions yet. Add one to start tracking.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p class="app-footer__text">&copy; 2026 Expense &amp; Budget Visualizer</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
