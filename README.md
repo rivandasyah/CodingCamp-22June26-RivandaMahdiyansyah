@@ -1,64 +1,78 @@
 # Expense & Budget Visualizer
 
-A mobile-friendly Expense & Budget Visualizer built with HTML, CSS, and Vanilla JavaScript. The app runs fully in the browser, stores data in Local Storage, and uses a soft sky-blue Glassmorphism interface with light and dark themes.
+A mobile-friendly Expense & Budget Visualizer built with **HTML, CSS, and Vanilla JavaScript**. The application runs entirely in the browser, stores data using the Local Storage API, and features a modern Apple-inspired Glassmorphism interface with both light and dark themes.
+
+## Live Demo
+
+**GitHub Pages:**
+https://rivandasyah.github.io/CodingCamp-22June26-RivandaMahdiyansyah/
+
+---
 
 ## Features
 
-- Add income and expense transactions
-- Delete transactions with confirmation
-- View current balance, total income, and total expense
-- Create custom categories
-- Persist transactions, categories, sorting, and theme in Local Storage
-- Sort transactions by latest, amount ascending, amount descending, or category A-Z
-- Visualize expense distribution with a responsive donut chart
-- Toggle between light and dark mode
-- Responsive layout for mobile, tablet, and desktop
+* Add income and expense transactions
+* Delete transactions with confirmation
+* View current balance, total income, and total expense
+* Create custom categories
+* Automatically save transactions and settings using Local Storage
+* Sort transactions by:
+
+  * Latest
+  * Amount (Ascending)
+  * Amount (Descending)
+  * Category (A–Z)
+* Visualize expenses using a responsive donut chart
+* Toggle between Light Mode and Dark Mode
+* Fully responsive design for mobile, tablet, and desktop
+
+---
 
 ## Technology Stack
 
-- HTML5
-- CSS3
-- Vanilla JavaScript
-- Browser Local Storage API
-- Inline SVG for chart and icons
+* HTML5
+* CSS3
+* Vanilla JavaScript (ES6+)
+* Browser Local Storage API
+* SVG / Canvas for data visualization
+
+---
 
 ## Project Structure
 
 ```text
 .
-|-- index.html
-|-- css/
-|   `-- styles.css
-|-- js/
-|   `-- app.js
-|-- .kiro/
-|   `-- specs/
-|       `-- expense-budget-visualizer/
-|           |-- requirements.md
-|           |-- design.md
-|           `-- tasks.md
-`-- README.md
+├── index.html
+├── css/
+│   └── styles.css
+├── js/
+│   └── app.js
+├── .kiro/
+│   └── specs/
+│       └── expense-budget-visualizer/
+│           ├── requirements.md
+│           ├── design.md
+│           └── tasks.md
+└── README.md
 ```
 
-## Installation
+---
 
-No package installation is required. This project has no external runtime dependencies and no build step.
+## Getting Started
 
-1. Clone the repository:
+Clone this repository:
 
 ```bash
-git clone https://github.com/<username>/<repository-name>.git
+git clone https://github.com/rivandasyah/CodingCamp-22June26-RivandaMahdiyansyah.git
 ```
 
-2. Open the project folder:
+Open the project folder:
 
 ```bash
-cd <repository-name>
+cd CodingCamp-22June26-RivandaMahdiyansyah
 ```
 
-3. Open `index.html` in a browser.
-
-For local development, you can also use any static file server. Example with Python:
+Open `index.html` directly in your browser, or use a local development server such as:
 
 ```bash
 python -m http.server 8000
@@ -70,52 +84,27 @@ Then visit:
 http://localhost:8000
 ```
 
-## Screenshots
+---
 
-Screenshot placeholders for the deployed project:
+## Deployment
 
-| View | Status |
-|---|---|
-| Mobile light mode | Add screenshot after deployment |
-| Mobile dark mode | Add screenshot after deployment |
-| Desktop dashboard | Add screenshot after deployment |
-| Spending chart with transactions | Add screenshot after deployment |
+The project is deployed using **GitHub Pages**.
 
-## GitHub Pages Deployment
+Live URL:
 
-This app can be deployed directly with GitHub Pages because it is a static site.
+https://rivandasyah.github.io/CodingCamp-22June26-RivandaMahdiyansyah/
 
-1. Push the project to GitHub.
-2. Open the repository on GitHub.
-3. Go to `Settings` -> `Pages`.
-4. Under `Build and deployment`, set `Source` to `Deploy from a branch`.
-5. Select the branch that contains `index.html`, usually `main`.
-6. Select the root folder `/`.
-7. Click `Save`.
-8. Wait for GitHub Pages to publish the site.
-
-The deployed URL will follow this format:
-
-```text
-https://<username>.github.io/<repository-name>/
-```
-
-## Deployment Checklist
-
-- `index.html` exists at the project root.
-- `css/styles.css` is linked from `index.html`.
-- `js/app.js` is linked from `index.html`.
-- No build command is required.
-- No backend server is required.
-- No external libraries are required.
-- App data persists with Local Storage in the browser.
-- GitHub Pages can serve the app from the repository root.
+---
 
 ## Browser Support
 
-The app is designed for current versions of:
+* Google Chrome
+* Mozilla Firefox
+* Microsoft Edge
+* Safari
 
-- Chrome
-- Firefox
-- Microsoft Edge
-- Safari
+---
+
+## License
+
+This project was created for the RevoU Coding Camp assignment and is intended for learning and portfolio purposes.
